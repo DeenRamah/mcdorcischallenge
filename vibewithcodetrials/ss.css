@@ -1,0 +1,137 @@
+:root {
+  --bg-dark: #080808;
+  --bg-light: #f4f4f4;
+  --card-dark: rgba(0,0,0,0.5);
+  --card-light: rgba(255,255,255,0.8);
+  --text-dark: #eee;
+  --text-light: #111;
+  --accent: #f5c542;
+  --shadow-dark: 0 12px 20px rgba(0,0,0,0.7);
+  --shadow-light: 0 8px 15px rgba(0,0,0,0.2);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font: 16px 'Segoe UI', sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-dark);
+  min-height: 100vh;
+  transition: .3s;
+}
+body.light {
+  background: var(--bg-light);
+  color: var(--text-light);
+}
+
+.header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 20px 40px;
+  backdrop-filter: blur(20px);
+  background: var(--card-dark);
+}
+body.light .header {
+  background: var(--card-light);
+}
+.logo { height: 50px; }
+.brand h1 {
+  margin-left: 15px;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+#modeToggle {
+  font-size: 1.4rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
+  gap: 30px;
+  padding: 40px;
+}
+
+.card {
+  background: var(--card-dark);
+  border-radius: 20px;
+  box-shadow: var(--shadow-dark);
+  backdrop-filter: blur(15px);
+  padding: 20px 25px;
+  transition: transform .3s, background .3s, box-shadow .3s;
+}
+body.light .card {
+  background: var(--card-light);
+  box-shadow: var(--shadow-light);
+}
+.card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 20px 30px rgba(245,197,66,0.5);
+}
+
+.card-header {
+  display: flex; justify-content: space-between; align-items: center;
+}
+.icon {
+  height: 35px;
+}
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  background: var(--accent);
+  font-weight: bold;
+}
+.btn.refresh {
+  background: transparent;
+  font-size: 1.2rem;
+}
+.btn.run {
+  width: 100%;
+  margin-top: 10px;
+  transition: background .2s;
+}
+.btn.run:hover {
+  background: #ffd566;
+}
+
+h2 {
+  margin: 15px 0 10px;
+  color: var(--accent);
+  font-size: 1.3rem;
+}
+p {
+  font-size: .95rem;
+  opacity: .85;
+  margin-bottom: 10px;
+}
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: none;
+  background: #222;
+  color: #eee;
+}
+body.light input, body.light textarea {
+  background: #fff;
+  color: #111;
+}
+textarea { resize: vertical; min-height: 80px; }
+
+.output {
+  margin-top: 12px;
+  background: #111;
+  color: #eee;
+  border-radius: 8px;
+  padding: 10px;
+  font: .9rem monospace;
+  white-space: pre-wrap;
+}
+body.light .output {
+  background: #eee;
+  color: #111;
+}

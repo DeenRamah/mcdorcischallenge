@@ -1,0 +1,254 @@
+/* st.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #0d0d0d, #1a1a1a);
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+}
+
+.main-title {
+  text-align: center;
+  margin: 40px 0 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.main-title h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.main-title p {
+  color: #aaa;
+  font-size: 1.1rem;
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.infographics {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px 60px;
+  gap: 40px;
+}
+
+.questions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.question-block {
+  background: #1c1c1c;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(255, 115, 0, 0.15);
+  border: 1px solid #2a2a2a;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: slideUp 0.7s ease-in-out;
+  position: relative;
+}
+
+.question-block:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px rgba(255, 140, 0, 0.3);
+}
+
+.question-block h2 {
+  color: #ff9900;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.question-block p {
+  font-size: 0.95rem;
+  color: #cccccc;
+  margin-bottom: 15px;
+}
+
+.question-block input,
+.question-block textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: none;
+  background: #292929;
+  color: #ffffff;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.question-block input:focus,
+.question-block textarea:focus {
+  box-shadow: 0 0 10px #ffae42;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.run-btn, .refresh-btn {
+  background: linear-gradient(to right, #ffa726, #ffcc80);
+  color: #000;
+  font-weight: bold;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-right: 10px;
+}
+
+.run-btn:hover, .refresh-btn:hover {
+  background: linear-gradient(to right, #ffd180, #ffe0b2);
+}
+
+.output {
+  background: #111;
+  padding: 12px;
+  border-radius: 12px;
+  font-family: monospace;
+  white-space: pre-wrap;
+  font-size: 0.95rem;
+  color: #ffffff;
+  border: 1px solid #2d2d2d;
+  margin-top: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  background: #0a0a0a;
+  color: #aaa;
+  font-size: 0.9rem;
+  border-top: 1px solid #222;
+  margin-top: 60px;
+}
+
+footer img {
+  width: 50px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+footer a {
+  color: #f90;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .questions {
+    grid-template-columns: 1fr;
+  }
+
+  .main-title h1 {
+    font-size: 1.8rem;
+  }
+}
+/* Toggle Button */
+.toggle-mode {
+  background: #444;
+  color: #ffcc80;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.toggle-mode:hover {
+  background: #666;
+}
+
+/* Light Mode Styles */
+body.light {
+  background: linear-gradient(to right, #ffffff, #f5f5f5);
+  color: #111;
+}
+
+body.light .question-block {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(255, 193, 7, 0.15);
+}
+
+body.light .question-block h2 {
+  color: #ff6f00;
+}
+
+body.light .question-block p {
+  color: #444;
+}
+
+body.light .question-block input,
+body.light .question-block textarea {
+  background: #f2f2f2;
+  color: #111;
+  border: 1px solid #ddd;
+}
+
+body.light .run-btn,
+body.light .refresh-btn {
+  background: linear-gradient(to right, #ffe0b2, #fff3e0);
+  color: #000;
+}
+
+body.light .output {
+  background: #f9f9f9;
+  color: #000;
+  border: 1px solid #ccc;
+}
+
+body.light footer {
+  background: #eee;
+  color: #333;
+  border-top: 1px solid #ccc;
+}
+
+body.light footer a {
+  color: #e65100;
+}
+
